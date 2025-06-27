@@ -48,7 +48,7 @@ window.addEventListener("load", () => {
         services()
         tabs();
         platform();
-        formUtils();
+        // formUtils();
         // datepicker();
         actionVideo()
     } else {
