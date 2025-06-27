@@ -1,0 +1,131 @@
+.card {
+    padding: 13.7rem 0 9.6rem;
+    background: #f9fafb;
+    @include _576-max {
+        padding: 90px 0 32px;
+    }
+    &__title {
+        margin-bottom: 3.2rem;
+        @include _576-max {
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        @include _991-max {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include _576-max {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    &__item {
+        box-shadow: 0 1.2rem 1.6rem 0 rgba(25, 36, 84, 0.08);
+        border-radius: 1.6rem;
+        overflow: hidden;
+        cursor: pointer;
+       
+        &-img {
+            width: 100%;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &-info {
+            padding: 1.6rem;
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 130%;
+            color: #000;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 0.8rem;
+        }
+        &-desc {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 130%;
+            color: rgb(166, 166, 166);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        &-date {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 130%;
+            color: rgb(166, 166, 166);
+            margin-top: 1.6rem;
+        }
+    }
+    &__pagination {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        width: max-content;
+        margin: 64px auto 0;
+        @include _576-max {
+            margin: 24px auto 0;
+        }
+        &-prev,
+        &-next,
+        &-item {
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: 500;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+        }
+        &-prev,
+        &-next {
+            background: #fff;
+            &.enable {
+                svg {
+                    path {
+                        stroke: #232d3d;
+                    }
+                }
+            }
+            svg {
+                height: 1rem;
+            }
+        }
+        &-item {
+            transition:
+                color 0.3s ease,
+                background 0.3s ease;
+            color: #a6a6a6;
+            &.active {
+                background: #fff;
+                color: #232d3d;
+            }
+        }
+        &-next {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+        &-list {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+    }
+}

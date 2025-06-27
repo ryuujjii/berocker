@@ -1,0 +1,84 @@
+.platform {
+  &__ty {
+    width: 43.5rem;
+    @include flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2.4rem;
+    z-index: 1;
+    padding: 4rem 6rem;
+    background-color: var(--light-color);
+    opacity: 0;
+    flex-direction: column;
+    visibility: hidden;
+    pointer-events: none;
+    @include _1199-max {
+      padding: 3.2rem;
+      margin-left: 16px;
+      width: 80%;
+    }
+    @include _991-max {
+      height: 100%;
+      width: 100%;
+      position: static;
+      transform: none;
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      border: 3px solid rgba(43, 115, 255, 0.12);
+      border-radius: 12px;
+      padding: 23px 35px;
+
+      display: none;
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      @include _991-max {
+        display: flex;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 4rem;
+      line-height: 100%;
+      text-align: center;
+      color: #444;
+      @include _991-max {
+        font-size: 29px;
+      }
+    }
+    &-text {
+      margin-top: 2.4rem;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 120%;
+      text-align: center;
+      color: #777;
+      @include _991-max {
+        margin-top: 17px;
+        font-size: 14px;
+      }
+      span {
+        text-wrap: nowrap;
+        color: var(--blue-color);
+      }
+    }
+    &-number {
+      margin-top: 2.4rem;
+      font-weight: 700;
+      font-size: 3.2rem;
+      line-height: 120%;
+      text-align: center;
+      color: #444;
+      @include _991-max {
+        margin-top: 16px;
+        font-size: 23px;
+      }
+    }
+  }
+}

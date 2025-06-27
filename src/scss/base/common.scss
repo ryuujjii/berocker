@@ -1,0 +1,154 @@
+//* для lenis
+@use "sass:math";
+
+@function rem($screen) {
+  @return math.div(100vw, $screen) * 10;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+html,
+body {
+  font-size: 10px;
+
+  @include _2880-min {
+    font-size: rem(1920);
+  }
+
+  // @media (min-width: 1440px) {
+  //   font-size: rem(1440);
+  // }
+  // @media (max-width: 1439px) {
+  //   font-size: rem(1600);
+  // }
+  // @media (max-width: 1320px) {
+  //   font-size: rem(1320);
+  // }
+  // @media (max-width: 992px) {
+  //   font-size: 8px;
+  // }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--light-color);
+  // overflow-x: hidden;
+  * {
+    font-family: var(--font);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  &.disable-scroll {
+    overflow: hidden;
+  }
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 134rem;
+
+  @include _2880-min {
+    max-width: 130rem;
+  }
+
+  @include _1980-min {
+    max-width: 150rem;
+  }
+}
+[data-show-scroll] {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transform: translateY(4rem);
+  opacity: 0;
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.title {
+  font-family: var(--font);
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 110%;
+  @include _2880-min {
+    font-size: 3.6rem;
+  }
+  @include _1199-max {
+    font-size: 32px;
+  }
+  @include _767-max {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 117%;
+  }
+}
+.mini-title {
+  font-family: var(--font);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 135%;
+  @include _767-max {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+}
+.text {
+  font-family: var(--font);
+  font-size: 1.6rem;
+  line-height: 130%;
+  font-weight: 400;
+  @include _767-max {
+    font-size: 14px;
+    line-height: 157%;
+  }
+}
+.min-text {
+  font-family: var(--font);
+  line-height: 135%;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.error {
+  border: 2px solid red !important;
+}
+
+.error-message,
+.book_error-message {
+  color: red;
+  font-size: 12px;
+  // margin-top: 5px;
+  padding-top: 5px;
+}

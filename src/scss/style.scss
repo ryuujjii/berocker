@@ -1,0 +1,51 @@
+// Font
+@import "../files/fonts/font.css";
+
+// Base
+@import "./base/var";
+@import "./base/reset";
+@import "./base/mixins";
+@import "./base/common";
+@import "./base/libs";
+
+// Components
+@import "./components/primary-button";
+@import "./components/preloader";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/form";
+@import "./components/checkbox";
+
+// Modal
+@import "./modals/modal";
+@import "./modals/modalAction";
+@import "./modals/modalFaq";
+@import "./modals/modalPlatform";
+
+// Home Page
+@import "./home/intro";
+@import "./home/platform/platform";
+@import "./home/comment";
+@import "./home/faq";
+@import "./home/services";
+@import "./home/why-us";
+@import "./home/action";
+@import "./home/pricing";
+
+// Blog Page
+@import "./blog/card";
+
+// Article Page
+@import "./article/index";
+
+// Feedback Page
+@import "./home/feedback";
+
+// Notification
+@import "./components/notification";
+
+// Privacy Page
+@import "./privacy/index";
+
+//Terms Page
+@import "./terms/index";

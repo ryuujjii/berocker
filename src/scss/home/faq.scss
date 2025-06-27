@@ -1,0 +1,196 @@
+.faq {
+    display: flex;
+    padding: 9.6rem 20px;
+    gap: 20px;
+    @include _991-max {
+        flex-direction: column;
+    }
+    @include _576-max {
+        padding: 40px 20px;
+    }
+    &__title,
+    &__img,
+    &__help,
+    &__list {
+        opacity: 0;
+        transform: translateY(8rem);
+        transition:
+            opacity 0.3s ease-in,
+            transform 0.3s ease-in;
+    }
+
+    &.active {
+        .faq {
+            &__title,
+            &__img,
+            &__help,
+            &__list {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+    &__title {
+        @include _991-max {
+            text-align: center;
+        }
+    }
+    &__left {
+        flex-grow: 1;
+    }
+    &__right {
+        width: 58rem;
+        // min-height: 58rem;
+        @include _991-max {
+            width: 100%;
+            margin-top: 35px;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        background: #f9f9f9;
+        padding: 1.6rem;
+        border-radius: 2.4rem;
+        @include _991-max {
+            padding: 16px;
+            border-radius: 24px;
+        }
+    }
+    &__item {
+        display: grid;
+        grid-template-rows: 1.2rem max-content 0fr;
+        padding: 0 1.4rem;
+        transition:
+            grid-template-rows 0.3s linear,
+            box-shadow 0.3s linear;
+        border-bottom: 1px solid #efeff0;
+        grid-template-rows: 3.2rem max-content 0rem 0fr 3.2rem;
+        box-shadow: 0 1.2rem 3.2rem rgba(25, 36, 84, 0);
+        cursor: pointer;
+        &:has(+ .active) {
+            border-bottom: 1px solid transparent;
+        }
+        grid-template-areas:
+            "."
+            "head"
+            "."
+            "desc"
+            ".";
+        &:last-of-type {
+            border-bottom: 1px solid transparent;
+        }
+        &.active {
+            grid-template-rows: 1.9rem max-content 1.2rem 1fr 1.9rem;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 1.2rem 3.2rem rgba(25, 36, 84, 0.2);
+            background: #fff;
+            .faq__item {
+                &-top {
+                    grid-template-columns: 0rem 1fr max-content;
+                }
+                &-arrow {
+                    transform: rotateX(-180deg);
+                }
+            }
+        }
+        &-img {
+            overflow: hidden;
+            img {
+                width: 1rem;
+                @include _991-max {
+                    width: 10px;
+                    padding: 1px 0;
+                }
+            }
+        }
+        &-top {
+            display: grid;
+            grid-template-columns: 1rem 1fr max-content;
+            gap: 1rem;
+            transition: grid-template-columns 0.3s linear;
+            grid-area: head;
+            & > * {
+                align-self: center;
+                @include _991-max {
+                    align-self: self-start;
+                }
+            }
+        }
+        &-desc {
+            overflow: hidden;
+            padding-left: 1rem;
+            line-height: 130%;
+            grid-area: desc;
+            color: #a6a6a6;
+            font-size: 1.4rem;
+            font-weight: 500;
+            @include _991-max {
+                font-size: 16px;
+            }
+        }
+        &-title {
+            padding: 0;
+            color: #171717;
+            font-size: 1.6rem;
+            font-weight: 700;
+            @include _991-max {
+                font-size: 16px;
+                line-height: 110%;
+            }
+        }
+        &-arrow {
+            transition: transform 0.3s linear;
+            transform-origin: center center;
+            @include _991-max {
+                padding: 5px 0;
+            }
+        }
+    }
+    &__help {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-top: 6.4rem;
+        @include _991-max {
+            flex-direction: column;
+            align-items: center;
+        }
+        &-desc {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 1.6rem;
+            @include _991-max {
+                font-size: 16px;
+            }
+        }
+    }
+    &__btn {
+        border-radius: 8px;
+        background: #2b73ff;
+        padding: 0.9rem 6rem;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 500;
+        @include _767-max {
+            padding: 10px 60px;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+    &__img {
+        margin-top: 7rem;
+        width: 31.8rem;
+        img {
+            width: 100%;
+        }
+        @include _991-max {
+            display: none;
+        }
+    }
+}

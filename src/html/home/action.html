@@ -1,0 +1,26 @@
+<section class="action" id="action">
+    <div class="container">
+        <div class="action__inner">
+            <div class="action__left">
+                <video class="action__video" src="files/videos/action.mp4" autoplay muted loop playsinline loading="lazy"></video>
+                <!-- <div class="action__video">
+                    <video class="video" controls autoplay muted loop plaseinline src="files/videos/action.mp4"></video>
+                </div> -->
+            </div>
+            <div class="action__right">
+                <div class="action__subtitle">
+                    <div class="action__subtitle-icon">
+                        <img src="img/icons/action-subtitle.svg" alt="">
+                    </div>
+                    <span class="action__subtitle-text">BeRocker Demo</span>
+                </div>
+                <h2 class="action__title title">See BeRocker<br>in action</h2>
+                <p class="action__text text">We used this company’s services for transporting a large cargo, and I must say, I’m thoroughly impressed with their professionalism and service quality.</p>
+                @@include('../components/primary-button-modal.html', { "text": "Book a demo", "class": "action__btn ", "type": "button", "data-open-modal": "modalAction"})
+            </div>
+        </div>
+    </div>
+    <div class="action__decor">
+        <img src="img/action-decor.png" alt="" loading="lazy">
+    </div>
+</section>

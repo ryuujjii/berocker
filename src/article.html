@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+@@include('html/components/head.html',{ "title":"BeRocker | Article" })
+
+<body class="blog">
+    @@include('html/components/loader.html')
+    @@include('html/components/header.html')
+    <main class="main">
+        @@include('html/article/index.html')
+        @@include('html/home/faq.html')
+    </main>
+    @@include('html/components/footer.html')
+    @@include('html/modals/modalAction.html')
+    @@include('html/modals/modalFaq.html')
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX3W73M7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
+
+<script src="./js/app.min.js"></script>
+
+</html>

@@ -1,0 +1,229 @@
+.action {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  // background: #132030;
+  background: #122335;
+  overflow: hidden;
+  transform: translateY(10rem);
+  transition: all 400ms ease;
+  @include _991-max {
+    padding: 120px 0 0;
+    transform: translateY(0rem);
+  }
+  @include _767-max {
+    padding: 65px 0 0;
+    background: #132030;
+  }
+  // .container
+  .container {
+  }
+
+  // .action__decor
+  &__decor {
+    position: absolute;
+    top: 0;
+    right: -64rem;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    @media (min-width: 1920px) {
+      right: -44rem;
+    }
+    @media (min-width: 2500px) {
+      right: 0;
+    }
+    @include _1199-max {
+      right: -60%;
+    }
+    @include _991-max {
+      right: initial;
+      top: 120px;
+      left: 50%;
+      width: 80%;
+      height: auto;
+      transform: translateX(-50%);
+      opacity: 0.5;
+    }
+    @include _767-max {
+      // width: 35%;
+      top: 65px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .action__inner
+  &__inner {
+    @include flex;
+    gap: 11.8rem;
+    position: relative;
+    z-index: 2;
+    @include _991-max {
+      flex-direction: column;
+      gap: 45px;
+      margin-bottom: 55px;
+    }
+  }
+
+  // .action__left
+  &__left {
+    width: 100%;
+    height: 100%;
+    @include _1980-min {
+      width: 50%;
+    }
+    @include _1199-max {
+    }
+    @include _991-max {
+      width: 100%;
+      order: 2;
+      // margin-bottom: -200px;
+    }
+    // @include _767-max {
+    //   margin-bottom: -100px;
+    // }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .action__video
+  &__video {
+    transform: translateY(40rem) scale(0.8);
+    transition: all 600ms ease;
+    @include _991-max {
+      transform: translateY(40rem) scale(0.8) rotate(-8deg);
+    }
+  }
+
+  // .action__right
+  &__right {
+    padding: 9.6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include _991-max {
+      padding: 50px 0 0;
+      align-items: center;
+      justify-content: center;
+      order: 1;
+    }
+  }
+
+  // .action__subtitle
+  &__subtitle {
+    margin-bottom: 2.3rem;
+    @include flex;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: all 400ms ease;
+    @include _991-max {
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+  }
+
+  // .action__subtitle-icon
+  &__subtitle-icon {
+    background: #1e4d86;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 1rem 0.8rem;
+    border-radius: 50%;
+    @include _991-max {
+      width: 32px;
+      height: 32px;
+      padding: 10px 8px;
+    }
+
+    img {
+      width: 1.6rem;
+      height: 1.2rem;
+      object-fit: contain;
+      @include _991-max {
+        width: 16px;
+        height: 12px;
+      }
+    }
+  }
+
+  // .action__subtitle-text
+  &__subtitle-text {
+    color: var(--light-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 138%;
+    @include _991-max {
+    }
+    @include _767-max {
+      font-size: 14px;
+      line-height: 100%;
+    }
+  }
+
+  // .action__title
+  &__title {
+    margin-bottom: 4rem;
+    color: var(--light-color);
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: all 400ms ease;
+    @include _991-max {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+
+  // .action__text
+  &__text {
+    margin-bottom: 2rem;
+    color: var(--light-color);
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: all 400ms ease;
+    @include _991-max {
+      margin-bottom: 35px;
+      text-align: center;
+    }
+  }
+
+  // .action__btn
+  &__btn {
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: all 400ms ease;
+  }
+
+  &.active {
+    transform: translateY(0);
+    .action__subtitle{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .action__title{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .action__text{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .action__btn{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .action__video {
+      transform: translateY(0) scale(1);
+      @include _991-max {
+        transform: translateY(0) scale(1) rotate(-8deg);
+      }
+    }
+  }
+}

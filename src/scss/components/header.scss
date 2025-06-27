@@ -1,0 +1,245 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  transition: background-color 0.3s ease;
+
+  &.light-bg {
+    background-color: #fff;
+    .navbar__login {
+      box-shadow: none;
+      &::before {
+        display: none !important;
+      }
+    }
+    @include _1199-max {
+      .show {
+        & + .header__burger {
+          span {
+            background: var(--light-color);
+          }
+        }
+      }
+      &:hover ~ & {
+        &::after {
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+      .navbar__logo {
+        &:has(+ .show) {
+          .white-path {
+            fill: var(--light-color);
+          }
+        }
+      }
+    }
+  }
+
+  // header__burger
+  &__burger {
+    display: none;
+    @include _1199-max {
+      display: block;
+      width: 34px;
+      height: 8px;
+      z-index: 2;
+      padding: 14px 10px;
+      position: relative;
+    }
+    span {
+      width: 100%;
+      height: 1px;
+      border-radius: 1px;
+      background: #fff;
+      position: absolute;
+      top: calc(50% + 3px);
+      left: 0;
+      transition:
+        top 400ms ease 250ms,
+        transform 400ms ease;
+      .light-bg & {
+        background: #374151;
+      }
+      &:nth-child(2) {
+        top: calc(50% - 3px);
+      }
+    }
+  }
+}
+
+.navbar {
+  padding: 2rem 0;
+  @include _576-max {
+  }
+
+  // .navbar__inner
+  &__inner {
+    width: 100%;
+    @include flex(space-between, center);
+  }
+
+  // .navbar__logo
+  &__logo {
+    position: relative;
+    z-index: 2;
+    svg {
+      max-width: 20rem;
+      width: 100%;
+      height: 100%;
+
+      @include _1980-min {
+        width: 22rem;
+      }
+
+      @include _2880-min {
+        width: 18rem;
+      }
+
+      .white-path {
+        transition: fill 0.3s ease;
+      }
+
+      @include _576-max {
+        max-width: 120px;
+        height: auto;
+      }
+    }
+    .light-bg & {
+      svg .white-path {
+        fill: #374151;
+      }
+    }
+  }
+
+  // .navbar__collapse
+  &__collapse {
+    @include flex(flex-end, center);
+    gap: 4rem;
+
+    .header & {
+      @include _1199-max {
+        position: fixed;
+        opacity: 0;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100lvh;
+        width: 100%;
+        background-color: #232d3d;
+        justify-content: center;
+        transition: 0.3s ease-in;
+        &.show {
+          opacity: 1;
+          visibility: visible;
+          & + .header__burger {
+            span:nth-child(1) {
+              top: 50%;
+              transform: rotate(45deg);
+              transition:
+                top 400ms ease,
+                transform 400ms ease 250ms;
+            }
+            span:nth-child(2) {
+              top: 50%;
+              transform: rotate(-45deg);
+              transition:
+                top 400ms ease,
+                transform 400ms ease 250ms;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // .navbar__nav
+  &__nav {
+    @include flex(flex-end, center);
+    gap: 2rem;
+
+    .header & {
+      @include _1199-max {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .nav-list {
+    // .nav-list__item
+    &__item {
+    }
+
+    // .nav-list__link
+    &__link {
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: var(--light-color);
+      padding: 1rem;
+      transition: color 0.3s ease;
+
+      @include _1980-min {
+        font-size: 2rem;
+      }
+      @include _1880-min {
+        font-size: 1.8rem;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: #2b73ff;
+        }
+      }
+      cursor: pointer;
+
+      .header & {
+        @include _1199-max {
+          font-size: 22px;
+          color: var(--light-color);
+        }
+      }
+
+      .light-bg & {
+        color: #374151;
+      }
+    }
+  }
+
+  // .navbar__login
+  &__login {
+    font-weight: 500;
+    box-shadow:
+      0 0 5px 0 rgba(43, 115, 255, 0.4),
+      0 0 16px 0 rgba(43, 115, 255, 0.2),
+      0 0 55px 0 rgba(43, 115, 255, 0.5);
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      display: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 120%;
+      aspect-ratio: 1/1;
+      left: 50%;
+      top: 50%;
+      background: linear-gradient(90deg, #2b73ff 0%, #1a4599 100%);
+      transform: translate(-50%, -50%) rotate(0deg);
+      transition: transform 0.3s ease;
+    }
+    span {
+      position: relative;
+      z-index: 2;
+    }
+
+    @include _2880-min {
+    }
+    @include _1199-max {
+      display: none;
+    }
+  }
+}

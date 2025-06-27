@@ -1,0 +1,78 @@
+.article {
+    padding: 13.6rem 0 9.6rem;
+    background: #f9fafb;
+    @include _576-max {
+        padding: 68px 0 32px;
+    }
+    &__banner {
+        width: 100%;
+        border-radius: 1.6rem;
+        height: 40rem;
+        overflow: hidden;
+        @include _576-max {
+            height: 204px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+    &__inner {
+        width: 100%;
+        @include _576-max {
+            &.container {
+                padding: 0;
+            }
+        }
+    }
+    &__content {
+        max-width: 78.2rem;
+        margin: 3.2rem auto 0;
+        @include _576-max {
+            padding: 0 21px;
+        }
+    }
+    &__desc {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 150%;
+        color: #777;
+        @include _576-max {
+            font-size: 16px;
+        }
+    }
+    &__title{
+        @include _576-max {
+            font-size: 32px;
+        }
+    }
+    &__subtitle {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #000;
+        line-height: 130%;
+        margin: 6.4rem 0 2.4rem 0;
+    }
+    &__link {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #2b73ff;
+        text-decoration: underline;
+    }
+    &__date {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 130%;
+        color: #a6a6a6;
+        margin: 3.2rem 0;
+        @include _576-max {
+            font-size: 12px;
+            margin: 20px 0;
+        }
+    }
+}

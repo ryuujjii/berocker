@@ -1,0 +1,65 @@
+.primary-button {
+    padding: 1rem 1.6rem;
+    background-color: var(--blue-color);
+    border: 1px solid transparent;
+    border-radius: 0.8rem;
+    @include flex;
+    gap: 0.8rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+    @include _767-max {
+        gap: 8px;
+        border-radius: 8px;
+        padding: 10px 15px;
+    }
+
+    @include _2880-min {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+    }
+
+    span {
+        color: var(--light-color);
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 125%;
+        @include _767-max {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 118%;
+        }
+    }
+
+    &::after {
+        content: "";
+        background-image: url("../img/icons/arrow-right.svg");
+        background-repeat: no-repeat;
+        transition: 0.3s ease;
+        width: 0.8rem;
+        height: 1rem;
+        margin-top: 0.3rem;
+        background-size: contain;
+        @include _767-max {
+            width: 8px;
+            height: 10px;
+            margin-top: 1px;
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            &.navbar__login {
+                &::before {
+                    transform: translate(-50%, -50%) rotate(180deg);
+                }
+            }
+            &::after {
+                transform: translateX(4px);
+            }
+            span {
+                color: var(--light-color);
+            }
+            background-color: #213f66;
+        }
+    }
+}
